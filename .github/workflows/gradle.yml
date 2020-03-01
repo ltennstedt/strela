@@ -1,0 +1,282 @@
+#
+# Copyright 2020 Lars Tennstedt
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+name: Java CI
+on:
+  push:
+    branches-ignore: gh-pages
+    paths-ignore:
+      - '.editorconfig'
+      - 'LICENSE'
+      - 'README.md'
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle-dependencies-${{ hashFiles('build.gradle.kts') }}
+      - name: Cache Konan
+        uses: actions/cache@v1
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-gradle-konan-${{ hashFiles('build.gradle.kts') }}
+      - name: Clean
+        run: gradle -i clean
+      - name: Build JVM
+        run: gradle -i jvmMainClasses jvmTestClasses
+      - name: Build JS
+        run: gradle -i jsMainClasses jsTestClasses
+      - name: Build LinuxX64
+        run: gradle -i linuxX64MainKlibrary linuxX64TestKlibrary
+      - name: Upload artifact classes-ubuntu
+        uses: actions/upload-artifact@v1
+        with:
+          name: classes-ubuntu
+          path: build/classes
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    needs: build-ubuntu
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle-dependencies-${{ hashFiles('build.gradle.kts') }}
+      - name: Cache Konan
+        uses: actions/cache@v1
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-gradle-konan-${{ hashFiles('build.gradle.kts') }}
+      - name: Download artifact classes-ubuntu
+        uses: actions/download-artifact@v1
+        with:
+          name: classes-ubuntu
+          path: build/classes
+      - name: Test JVM
+        run: gradle -i jvmTest
+      - name: Test JS
+        run: gradle -i jsBrowserTest
+      - name: Test LinuxX64
+        run: gradle -i linuxX64Test
+      - name: Upload artifact test-html-ubuntu
+        uses: actions/upload-artifact@v1
+        with:
+          name: test-html-ubuntu
+          path: build/reports/tests
+      - name: Upload artifact test-xml-ubuntu
+        uses: actions/upload-artifact@v1
+        with:
+          name: test-xml-ubuntu
+          path: build/test-results
+  lint:
+    runs-on: ubuntu-latest
+    needs: build-ubuntu
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle-dependencies-${{ hashFiles('build.gradle.kts') }}
+      - run: gradle -i --no-daemon ktlintCheck
+  package-ubuntu:
+    runs-on: ubuntu-latest
+    needs: [test-ubuntu, lint]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle-dependencies-${{ hashFiles('build.gradle.kts') }}
+      - name: Cache Konan
+        uses: actions/cache@v1
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-gradle-konan-${{ hashFiles('build.gradle.kts') }}
+      - name: Download artifact classes-ubuntu
+        uses: actions/download-artifact@v1
+        with:
+          name: classes-ubuntu
+          path: build/classes
+      - name: Package JVM
+        run: gradle -i jvmJar jvmSourcesJar
+      - name: Package JS
+        run: gradle -i jsJar jsSourcesJar
+      - name: Package LinuxX64
+        run: gradle -i linuxX64Binaries linuxX64SourcesJar
+      - name: Upload artifact jars-ubuntu
+        uses: actions/upload-artifact@v1
+        with:
+          name: jars-ubuntu
+          path: build/libs
+      - name: Upload artifact binaries-ubuntu
+        uses: actions/upload-artifact@v1
+        with:
+          name: binaries-ubuntu
+          path: build/bin
+  doc:
+    runs-on: ubuntu-latest
+    needs: build-ubuntu
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle-dependencies-${{ hashFiles('build.gradle.kts') }}
+      - run: gradle -i --no-daemon dokka
+      - name: Upload artifact dokka
+        uses: actions/upload-artifact@v1
+        with:
+          name: dokka
+          path: build/dokka
+  publish-ubuntu:
+    runs-on: ubuntu-latest
+    needs: package-ubuntu
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle-dependencies-${{ hashFiles('build.gradle.kts') }}
+      - name: Cache Konan
+        uses: actions/cache@v1
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-gradle-konan-${{ hashFiles('build.gradle.kts') }}
+      - name: Download artifact jars-ubuntu
+        uses: actions/download-artifact@v1
+        with:
+          name: jars-ubuntu
+          path: build/libs
+      - name: Publish JVM
+        run: gradle -i publishJvmPublicationToMavenLocal
+      - name: Publish JS
+        run: gradle -i publishJsPublicationToMavenLocal
+      - name: Publish LinuxX64
+        run: gradle -i publishLinuxX64PublicationToMavenLocal
+      - name: Upload artifact publications-ubuntu
+        uses: actions/upload-artifact@v1
+        with:
+          name: publications-ubuntu
+          path: build/publications
+  report:
+    runs-on: ubuntu-latest
+    needs: test-ubuntu
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle-dependencies-${{ hashFiles('build.gradle.kts') }}
+      - name: Download artifact test-html-ubuntu
+        uses: actions/download-artifact@v1
+        with:
+          name: test-html-ubuntu
+          path: build/reports/tests
+      - name: Download artifact test-xml-ubuntu
+        uses: actions/download-artifact@v1
+        with:
+          name: test-xml-ubuntu
+          path: build/test-results
+      - run: gradle -i --no-daemon projectReport buildDashboard generateSiteHtml
+      - name: Upload artifact reports
+        uses: actions/upload-artifact@v1
+        with:
+          name: reports
+          path: build/reports
+      - name: Upload artifact docs
+        uses: actions/upload-artifact@v1
+        with:
+          name: docs
+          path: build/docs
+  pages:
+    runs-on: ubuntu-latest
+    needs: [report, publish-ubuntu, doc]
+    steps:
+      - name: Download artifact dokka
+        uses: actions/download-artifact@v1
+        with:
+          name: dokka
+          path: build/dokka
+      - name: Download artifact reports
+        uses: actions/download-artifact@v1
+        with:
+          name: reports
+          path: build/reports
+      - name: Download artifact docs
+        uses: actions/download-artifact@v1
+        with:
+          name: reports
+          path: build/docs
+      - name: Filesystem operations
+        run: |
+          rm -Rf pages
+          mkdir pages
+          cd build
+          mv dokka ../pages
+          mv docs ../pages
+          mv reports ../pages
+      - name: GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v1.2.5
+        with:
+          build_dir: pages
+          commit_message: "Pages"
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
