@@ -1,0 +1,118 @@
+
+------------------------------------------------------------
+Tasks runnable from root project - Functional companion for Kotlin Multiplatform
+------------------------------------------------------------
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+clean - Deletes the build directory.
+compileKotlinLinuxX64 - Compiles a klibrary from the 'main' compilation for target 'native'.
+compileTestKotlinLinuxX64 - Compiles a klibrary from the 'test' compilation for target 'native'.
+jsJar - Assembles a jar archive containing the main classes.
+jsMainClasses - Assembles outputs for compilation 'main' of target 'js'
+jsTestClasses - Assembles outputs for compilation 'test' of target 'js'
+jvmJar - Assembles a jar archive containing the main classes.
+jvmMainClasses - Assembles outputs for compilation 'main' of target 'jvm'
+jvmTestClasses - Assembles outputs for compilation 'test' of target 'jvm'
+linkDebugSharedLinuxX64 - Links a dynamic library 'debugShared' for a target 'linuxX64'.
+linkDebugTestLinuxX64 - Links a test executable 'debugTest' for a target 'linuxX64'.
+linkReleaseSharedLinuxX64 - Links a dynamic library 'releaseShared' for a target 'linuxX64'.
+linuxX64MainKlibrary - Assembles outputs for compilation 'main' of target 'linuxX64'
+linuxX64TestKlibrary - Assembles outputs for compilation 'test' of target 'linuxX64'
+metadataJar - Assembles a jar archive containing the main classes.
+metadataMainClasses - Assembles outputs for compilation 'main' of target 'metadata'
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Documentation tasks
+-------------------
+dokka - Generates dokka documentation for Kotlin
+generateSiteHtml - Generates a web page containing information about the project.
+
+Formatting tasks
+----------------
+ktlintFormat - Runs the ktlint formatter on all kotlin sources in this project.
+
+Help tasks
+----------
+addKtlintCheckGitPreCommitHook - Adds git hook to run ktlintCheck on changed files
+addKtlintFormatGitPreCommitHook - Adds git hook to run ktlintFormat on changed files
+buildEnvironment - Displays all buildscript dependencies declared in root project 'strela'.
+components - Displays the components produced by root project 'strela'. [incubating]
+dependencies - Displays all dependencies declared in root project 'strela'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'strela'.
+dependentComponents - Displays the dependent components of components in root project 'strela'. [incubating]
+help - Displays a help message.
+kotlinDslAccessorsReport - Prints the Kotlin code for accessing the currently available project extensions and conventions.
+ktlintApplyToIdea - Generates IDEA built-in formatter rules and apply them to the project.It will overwrite existing ones.
+ktlintApplyToIdeaGlobally - Generates IDEA built-in formatter rules and apply them globally (in IDEA user settings folder). It will overwrite existing ones.
+model - Displays the configuration model of root project 'strela'. [incubating]
+outgoingVariants - Displays the outgoing variants of root project 'strela'.
+projects - Displays the sub-projects of root project 'strela'.
+properties - Displays the properties of root project 'strela'.
+tasks - Displays the tasks runnable from root project 'strela'.
+
+IDE tasks
+---------
+cleanIdea - Cleans IDEA project files (IML, IPR)
+idea - Generates IDEA project files (IML, IPR, IWS)
+openIdea - Opens the IDEA project
+
+NodeJs tasks
+------------
+jsPackageJson - Create package.json file for compilation 'main' (target js (js))
+jsTestPackageJson - Create package.json file for compilation 'test' (target js (js))
+kotlinNodeJsSetup - Download and install a local node/npm version
+kotlinNpmInstall - Find, download and link NPM dependencies and projects
+
+Publishing tasks
+----------------
+generateMetadataFileForJsPublication - Generates the Gradle metadata file for publication 'js'.
+generateMetadataFileForJvmPublication - Generates the Gradle metadata file for publication 'jvm'.
+generateMetadataFileForKotlinMultiplatformPublication - Generates the Gradle metadata file for publication 'kotlinMultiplatform'.
+generateMetadataFileForLinuxX64Publication - Generates the Gradle metadata file for publication 'linuxX64'.
+generateMetadataFileForMetadataPublication - Generates the Gradle metadata file for publication 'metadata'.
+generatePomFileForJsPublication - Generates the Maven POM file for publication 'js'.
+generatePomFileForJvmPublication - Generates the Maven POM file for publication 'jvm'.
+generatePomFileForKotlinMultiplatformPublication - Generates the Maven POM file for publication 'kotlinMultiplatform'.
+generatePomFileForLinuxX64Publication - Generates the Maven POM file for publication 'linuxX64'.
+generatePomFileForMetadataPublication - Generates the Maven POM file for publication 'metadata'.
+publish - Publishes all publications produced by this project.
+publishJsPublicationToMavenLocal - Publishes Maven publication 'js' to the local Maven repository.
+publishJvmPublicationToMavenLocal - Publishes Maven publication 'jvm' to the local Maven repository.
+publishKotlinMultiplatformPublicationToMavenLocal - Publishes Maven publication 'kotlinMultiplatform' to the local Maven repository.
+publishLinuxX64PublicationToMavenLocal - Publishes Maven publication 'linuxX64' to the local Maven repository.
+publishMetadataPublicationToMavenLocal - Publishes Maven publication 'metadata' to the local Maven repository.
+publishToMavenLocal - Publishes all Maven publications produced by this project to the local Maven cache.
+
+Reporting tasks
+---------------
+buildDashboard - Generates a dashboard of all the reports produced by this build.
+projectReport - Generates a report about your project.
+
+Verification tasks
+------------------
+allTests - Runs the tests for all targets and create aggregated report
+check - Runs all checks.
+jsBrowserTest - Run all js tests inside browser using karma and webpack
+jsTest - Run JS tests for all platforms
+jvmTest - Runs the tests of the test test run.
+ktlintCheck - Runs ktlint on all kotlin sources in this project.
+linuxX64Test - Executes Kotlin/Native unit tests for target linuxX64.
+
+Rules
+-----
+Pattern: clean<TaskName>: Cleans the output files of a task.
+Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
+Pattern: upload<ConfigurationName>: Assembles and uploads the artifacts belonging to a configuration.
+
+To see all tasks and more detail, run gradle tasks --all
+
+To see more detail about a task, run gradle help --task <task>

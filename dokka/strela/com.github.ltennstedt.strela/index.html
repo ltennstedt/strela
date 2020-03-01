@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.github.ltennstedt.strela - strela</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">strela</a>&nbsp;/&nbsp;<a href="./index.html">com.github.ltennstedt.strela</a><br/>
+<br/>
+<h2>Package com.github.ltennstedt.strela</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-action/index.html">Action</a></h4>
+</td>
+<td>
+<p>Action</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Action</span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Enum</span><span class="symbol">&lt;</span><span class="identifier">E</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-either/index.html">Either</a></h4>
+</td>
+<td>
+<p>Either</p>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">Either</span><span class="symbol">&lt;</span><span class="identifier">L</span><span class="symbol">, </span><span class="identifier">R</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-ior/index.html">Ior</a></h4>
+</td>
+<td>
+<p>Ior</p>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">Ior</span><span class="symbol">&lt;</span><span class="identifier">L</span><span class="symbol">, </span><span class="identifier">R</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-option/index.html">Option</a></h4>
+</td>
+<td>
+<p>Option</p>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">Option</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-store/index.html">Store</a></h4>
+</td>
+<td>
+<p>Store</p>
+<code><span class="keyword">class </span><span class="identifier">Store</span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Enum</span><span class="symbol">&lt;</span><span class="identifier">E</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-triple/index.html">Triple</a></h4>
+</td>
+<td>
+<p>Triple</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Triple</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-try/index.html">Try</a></h4>
+</td>
+<td>
+<p>Try</p>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">Try</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-experimental-strela/index.html">ExperimentalStrela</a></h4>
+</td>
+<td>
+<p>ExperimentalStrela</p>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">ExperimentalStrela</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="option-of.html">optionOf</a></h4>
+</td>
+<td>
+<p>Returns a <a href="-option/-some/index.html">Some</a> if <code>[value] !== null</code>, a <a href="-option/-none/index.html">None</a> otherwise</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">optionOf</span><span class="symbol">(</span><span class="identifier" id="com.github.ltennstedt.strela$optionOf(com.github.ltennstedt.strela.optionOf.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="-option/index.html"><span class="identifier">Option</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="try-of.html">tryOf</a></h4>
+</td>
+<td>
+<p>Returns a <a href="-try/-success/index.html">Success</a> if invoking <a href="try-of.html#com.github.ltennstedt.strela$tryOf(kotlin.Function0((com.github.ltennstedt.strela.tryOf.V)))/f">f</a> does not throw a <code>Throwable</code>, a <a href="-try/-failure/index.html">Failure</a> otherwise</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">&gt;</span> <span class="identifier">tryOf</span><span class="symbol">(</span><span class="identifier" id="com.github.ltennstedt.strela$tryOf(kotlin.Function0((com.github.ltennstedt.strela.tryOf.V)))/f">f</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><a href="-try/index.html"><span class="identifier">Try</span></a><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

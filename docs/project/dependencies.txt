@@ -1,0 +1,606 @@
+
+------------------------------------------------------------
+Root project - Functional companion for Kotlin Multiplatform
+------------------------------------------------------------
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+commonMainApi (n)
+No dependencies
+
+commonMainApiDependenciesMetadata
+No dependencies
+
+commonMainCompileOnly (n)
+No dependencies
+
+commonMainCompileOnlyDependenciesMetadata
+No dependencies
+
+commonMainImplementation (n)
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61 (n)
+
+commonMainImplementationDependenciesMetadata
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+commonMainRuntimeOnly (n)
+No dependencies
+
+commonMainRuntimeOnlyDependenciesMetadata
+No dependencies
+
+commonTestApi (n)
+No dependencies
+
+commonTestApiDependenciesMetadata
+No dependencies
+
+commonTestCompileOnly (n)
+No dependencies
+
+commonTestCompileOnlyDependenciesMetadata
+No dependencies
+
+commonTestImplementation (n)
++--- org.jetbrains.kotlin:kotlin-test-common (n)
+\--- org.jetbrains.kotlin:kotlin-test-annotations-common (n)
+
+commonTestImplementationDependenciesMetadata
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+     \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+commonTestRuntimeOnly (n)
+No dependencies
+
+commonTestRuntimeOnlyDependenciesMetadata
+No dependencies
+
+compileClasspath (n)
+No dependencies
+
+default - Configuration for default artifacts.
+No dependencies
+
+dokkaRuntime
+\--- org.jetbrains.dokka:dokka-fatjar:0.10.1
+
+js-api (n)
+No dependencies
+
+js-runtime (n)
++--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61 (n)
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61 (n)
+
+jsApi - API dependencies for compilation 'main' (target js (js)). (n)
+No dependencies
+
+jsApiElements - API elements for main. (n)
+No dependencies
+
+jsCompile - Dependencies for compilation 'main' (target js (js)) (deprecated, use 'jsImplementation ' instead).
+No dependencies
+
+jsCompileClasspath - Compile classpath for compilation 'main' (target js (js)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61
+     \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+jsCompileOnly - Compile only dependencies for compilation 'main' (target js (js)).
+No dependencies
+
+jsDefault
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61
+     \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+jsImplementation - Implementation only dependencies for compilation 'main' (target js (js)). (n)
+No dependencies
+
+jsMainApi (n)
+No dependencies
+
+jsMainApiDependenciesMetadata
+No dependencies
+
+jsMainCompileOnly (n)
+No dependencies
+
+jsMainCompileOnlyDependenciesMetadata
+No dependencies
+
+jsMainImplementation (n)
+\--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61 (n)
+
+jsMainImplementationDependenciesMetadata
+\--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61
+     \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+jsMainRuntimeOnly (n)
+No dependencies
+
+jsMainRuntimeOnlyDependenciesMetadata
+No dependencies
+
+jsRuntime - Runtime dependencies for compilation 'main' (target js (js)) (deprecated, use 'jsRuntimeOnly ' instead).
+No dependencies
+
+jsRuntimeClasspath - Runtime classpath of compilation 'main' (target js (js)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61
+     \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+jsRuntimeElements - Elements of runtime for main. (n)
+No dependencies
+
+jsRuntimeOnly - Runtime only dependencies for compilation 'main' (target js (js)). (n)
+No dependencies
+
+jsSourceArtifacts (n)
+No dependencies
+
+jsTestApi - API dependencies for compilation 'test' (target js (js)). (n)
+No dependencies
+
+jsTestApiDependenciesMetadata
+No dependencies
+
+jsTestCompile - Dependencies for compilation 'test' (target js (js)) (deprecated, use 'jsTestImplementation ' instead).
+No dependencies
+
+jsTestCompileClasspath - Compile classpath for compilation 'test' (target js (js)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-test-js:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-test-common:1.3.61 (*)
+     +--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61 (*)
+     \--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61 (*)
+
+jsTestCompileOnly - Compile only dependencies for compilation 'test' (target js (js)). (n)
+No dependencies
+
+jsTestCompileOnlyDependenciesMetadata
+No dependencies
+
+jsTestImplementation - Implementation only dependencies for compilation 'test' (target js (js)). (n)
+\--- org.jetbrains.kotlin:kotlin-test-js:1.3.61 (n)
+
+jsTestImplementationDependenciesMetadata
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-test-js:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-test-common:1.3.61 (*)
+     +--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61 (*)
+     \--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61 (*)
+
+jsTestRuntime - Runtime dependencies for compilation 'test' (target js (js)) (deprecated, use 'jsTestRuntimeOnly ' instead).
+No dependencies
+
+jsTestRuntimeClasspath - Runtime classpath of compilation 'test' (target js (js)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-test-js:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-test-common:1.3.61 (*)
+     +--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61 (*)
+     \--- org.jetbrains.kotlin:kotlin-stdlib-js:1.3.61 (*)
+
+jsTestRuntimeOnly - Runtime only dependencies for compilation 'test' (target js (js)). (n)
+No dependencies
+
+jsTestRuntimeOnlyDependenciesMetadata
+No dependencies
+
+jvm-api (n)
+No dependencies
+
+jvm-runtime (n)
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61 (n)
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61 (n)
+
+jvmApi - API dependencies for compilation 'main' (target jvm (jvm)). (n)
+No dependencies
+
+jvmApiElements - API elements for main. (n)
+No dependencies
+
+jvmCompile - Dependencies for compilation 'main' (target jvm (jvm)) (deprecated, use 'jvmImplementation ' instead).
+No dependencies
+
+jvmCompileClasspath - Compile classpath for compilation 'main' (target jvm (jvm)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+     |    \--- org.jetbrains:annotations:13.0
+     \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61
+          \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+
+jvmCompileOnly - Compile only dependencies for compilation 'main' (target jvm (jvm)).
+No dependencies
+
+jvmDefault
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+     |    \--- org.jetbrains:annotations:13.0
+     \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61
+          \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+
+jvmImplementation - Implementation only dependencies for compilation 'main' (target jvm (jvm)). (n)
+No dependencies
+
+jvmMainApi (n)
+No dependencies
+
+jvmMainApiDependenciesMetadata
+No dependencies
+
+jvmMainCompileOnly (n)
+No dependencies
+
+jvmMainCompileOnlyDependenciesMetadata
+No dependencies
+
+jvmMainImplementation (n)
+\--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61 (n)
+
+jvmMainImplementationDependenciesMetadata
+\--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+     |    \--- org.jetbrains:annotations:13.0
+     \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61
+          \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+
+jvmMainRuntimeOnly (n)
+No dependencies
+
+jvmMainRuntimeOnlyDependenciesMetadata
+No dependencies
+
+jvmRuntime - Runtime dependencies for compilation 'main' (target jvm (jvm)) (deprecated, use 'jvmRuntimeOnly ' instead).
+No dependencies
+
+jvmRuntimeClasspath - Runtime classpath of compilation 'main' (target jvm (jvm)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+     |    \--- org.jetbrains:annotations:13.0
+     \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61
+          \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+
+jvmRuntimeElements - Elements of runtime for main. (n)
+No dependencies
+
+jvmRuntimeOnly - Runtime only dependencies for compilation 'main' (target jvm (jvm)). (n)
+No dependencies
+
+jvmSourceArtifacts (n)
+No dependencies
+
+jvmTestApi - API dependencies for compilation 'test' (target jvm (jvm)). (n)
+No dependencies
+
+jvmTestApiDependenciesMetadata
+No dependencies
+
+jvmTestCompile - Dependencies for compilation 'test' (target jvm (jvm)) (deprecated, use 'jvmTestImplementation ' instead).
+No dependencies
+
+jvmTestCompileClasspath - Compile classpath for compilation 'test' (target jvm (jvm)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+|    |    \--- org.jetbrains:annotations:13.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+\--- org.jetbrains.kotlin:kotlin-test-junit:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61 (*)
+     +--- org.jetbrains.kotlin:kotlin-test:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-test-common:1.3.61 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+     \--- junit:junit:4.12
+          \--- org.hamcrest:hamcrest-core:1.3
+
+jvmTestCompileOnly - Compile only dependencies for compilation 'test' (target jvm (jvm)). (n)
+No dependencies
+
+jvmTestCompileOnlyDependenciesMetadata
+No dependencies
+
+jvmTestImplementation - Implementation only dependencies for compilation 'test' (target jvm (jvm)). (n)
+\--- org.jetbrains.kotlin:kotlin-test-junit:1.3.61 (n)
+
+jvmTestImplementationDependenciesMetadata
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+|    |    \--- org.jetbrains:annotations:13.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+\--- org.jetbrains.kotlin:kotlin-test-junit:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61 (*)
+     +--- org.jetbrains.kotlin:kotlin-test:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-test-common:1.3.61 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+     \--- junit:junit:4.12
+          \--- org.hamcrest:hamcrest-core:1.3
+
+jvmTestRuntime - Runtime dependencies for compilation 'test' (target jvm (jvm)) (deprecated, use 'jvmTestRuntimeOnly ' instead).
+No dependencies
+
+jvmTestRuntimeClasspath - Runtime classpath of compilation 'test' (target jvm (jvm)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+|    |    \--- org.jetbrains:annotations:13.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+\--- org.jetbrains.kotlin:kotlin-test-junit:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61 (*)
+     +--- org.jetbrains.kotlin:kotlin-test:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-test-common:1.3.61 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+     \--- junit:junit:4.12
+          \--- org.hamcrest:hamcrest-core:1.3
+
+jvmTestRuntimeOnly - Runtime only dependencies for compilation 'test' (target jvm (jvm)). (n)
+No dependencies
+
+jvmTestRuntimeOnlyDependenciesMetadata
+No dependencies
+
+kotlinCompilerClasspath
+\--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+     |    \--- org.jetbrains:annotations:13.0
+     +--- org.jetbrains.kotlin:kotlin-script-runtime:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-reflect:1.3.61
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+     +--- org.jetbrains.kotlin:kotlin-daemon-embeddable:1.3.61
+     \--- org.jetbrains.intellij.deps:trove4j:1.0.20181211
+
+kotlinCompilerPluginClasspath
+\--- org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.3.61
+     +--- org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.3.61
+     |    +--- org.jetbrains.kotlin:kotlin-scripting-common:1.3.61
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61
+     |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+     |    |    |    \--- org.jetbrains:annotations:13.0
+     |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1
+     |    +--- org.jetbrains.kotlin:kotlin-scripting-jvm:1.3.61
+     |    |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.3.61
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+     |    |    \--- org.jetbrains.kotlin:kotlin-scripting-common:1.3.61 (*)
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+     |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1
+     \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.61 (*)
+
+kotlinNativeCompilerPluginClasspath
+No dependencies
+
+kotlinScriptDef - Script filename extensions discovery classpath configuration
+No dependencies
+
+kotlinScriptDefExtensions
+No dependencies
+
+ktlint - Main ktlint-gradle configuration
+\--- com.pinterest:ktlint:0.36.0
+     +--- com.pinterest.ktlint:ktlint-core:0.36.0
+     |    +--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.3.60
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60
+     |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.60
+     |    |    |    \--- org.jetbrains:annotations:13.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.3.60
+     |    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.3.60
+     |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     |    |    +--- org.jetbrains.kotlin:kotlin-daemon-embeddable:1.3.60
+     |    |    \--- org.jetbrains.intellij.deps:trove4j:1.0.20181211
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     |    \--- org.ec4j.core:ec4j-core:0.2.0
+     +--- com.pinterest.ktlint:ktlint-reporter-checkstyle:0.36.0
+     |    +--- com.pinterest.ktlint:ktlint-core:0.36.0 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     +--- com.pinterest.ktlint:ktlint-reporter-json:0.36.0
+     |    +--- com.pinterest.ktlint:ktlint-core:0.36.0 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     +--- com.pinterest.ktlint:ktlint-reporter-html:0.36.0
+     |    +--- com.pinterest.ktlint:ktlint-core:0.36.0 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     +--- com.pinterest.ktlint:ktlint-reporter-plain:0.36.0
+     |    +--- com.pinterest.ktlint:ktlint-core:0.36.0 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     +--- com.pinterest.ktlint:ktlint-ruleset-experimental:0.36.0
+     |    +--- com.pinterest.ktlint:ktlint-core:0.36.0 (*)
+     |    +--- com.pinterest.ktlint:ktlint-test:0.36.0
+     |    |    +--- com.pinterest.ktlint:ktlint-core:0.36.0 (*)
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     |    |    +--- org.assertj:assertj-core:3.12.2
+     |    |    \--- junit:junit:4.12
+     |    |         \--- org.hamcrest:hamcrest-core:1.3
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     +--- com.pinterest.ktlint:ktlint-ruleset-standard:0.36.0
+     |    +--- com.pinterest.ktlint:ktlint-core:0.36.0 (*)
+     |    +--- com.pinterest.ktlint:ktlint-test:0.36.0 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     +--- com.pinterest.ktlint:ktlint-test:0.36.0 (*)
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.60 (*)
+     +--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.3.60 (*)
+     +--- com.github.shyiko.klob:klob:0.2.1
+     \--- info.picocli:picocli:3.9.6
+
+ktlintReporter - All ktlint custom reporters dependencies
+No dependencies
+
+ktlintRuleset - All ktlint rulesets dependencies
+No dependencies
+
+linuxX64-api (n)
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61 (n)
+
+linuxX64Api - API dependencies for compilation 'main' (target linuxX64 (native)).
+No dependencies
+
+linuxX64ApiElements - API elements for main. (n)
+No dependencies
+
+linuxX64Compile - Dependencies for compilation 'main' (target linuxX64 (native)) (deprecated, use 'linuxX64Implementation ' instead).
+No dependencies
+
+linuxX64CompileKlibraries - Compile classpath for compilation 'main' (target linuxX64 (native)).
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+linuxX64CompileOnly - Compile only dependencies for compilation 'main' (target linuxX64 (native)).
+No dependencies
+
+linuxX64Default
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+linuxX64Implementation - Implementation only dependencies for compilation 'main' (target linuxX64 (native)). (n)
+No dependencies
+
+linuxX64MainApi (n)
+No dependencies
+
+linuxX64MainApiDependenciesMetadata
+No dependencies
+
+linuxX64MainCompileOnly (n)
+No dependencies
+
+linuxX64MainCompileOnlyDependenciesMetadata
+No dependencies
+
+linuxX64MainImplementation (n)
+No dependencies
+
+linuxX64MainImplementationDependenciesMetadata
+No dependencies
+
+linuxX64MainRuntimeOnly (n)
+No dependencies
+
+linuxX64MainRuntimeOnlyDependenciesMetadata
+No dependencies
+
+linuxX64RuntimeOnly
+No dependencies
+
+linuxX64SourceArtifacts (n)
+No dependencies
+
+linuxX64TestApi - API dependencies for compilation 'test' (target linuxX64 (native)).
+No dependencies
+
+linuxX64TestApiDependenciesMetadata
+No dependencies
+
+linuxX64TestCompile - Dependencies for compilation 'test' (target linuxX64 (native)) (deprecated, use 'linuxX64TestImplementation ' instead).
+No dependencies
+
+linuxX64TestCompileKlibraries - Compile classpath for compilation 'test' (target linuxX64 (native)).
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+     \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+linuxX64TestCompileOnly - Compile only dependencies for compilation 'test' (target linuxX64 (native)). (n)
+No dependencies
+
+linuxX64TestCompileOnlyDependenciesMetadata
+No dependencies
+
+linuxX64TestImplementation - Implementation only dependencies for compilation 'test' (target linuxX64 (native)). (n)
+No dependencies
+
+linuxX64TestImplementationDependenciesMetadata
++--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
++--- org.jetbrains.kotlin:kotlin-test-common:1.3.61
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+\--- org.jetbrains.kotlin:kotlin-test-annotations-common:1.3.61
+     \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+linuxX64TestRuntimeOnly (n)
+No dependencies
+
+linuxX64TestRuntimeOnlyDependenciesMetadata
+No dependencies
+
+metadata-api (n)
+No dependencies
+
+metadataApi - API dependencies for compilation 'main' (target metadata (common)). (n)
+No dependencies
+
+metadataApiElements - API elements for main. (n)
+No dependencies
+
+metadataCompile - Dependencies for compilation 'main' (target metadata (common)) (deprecated, use 'metadataImplementation ' instead).
+No dependencies
+
+metadataCompileClasspath - Compile classpath for compilation 'main' (target metadata (common)).
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61
+
+metadataCompileOnly - Compile only dependencies for compilation 'main' (target metadata (common)).
+No dependencies
+
+metadataDefault
+No dependencies
+
+metadataImplementation - Implementation only dependencies for compilation 'main' (target metadata (common)). (n)
+No dependencies
+
+metadataRuntimeOnly
+No dependencies
+
+metadataSourceArtifacts (n)
+No dependencies
+
+testKotlinScriptDef - Script filename extensions discovery classpath configuration
+No dependencies
+
+testKotlinScriptDefExtensions
+No dependencies
+
+(*) - dependencies omitted (listed previously)
+
+(n) - Not resolved (configuration is not meant to be resolved)
+
+A web-based, searchable dependency report is available by adding the --scan option.
