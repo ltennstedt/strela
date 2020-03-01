@@ -16,35 +16,13 @@
 
 package com.github.ltennstedt.strela
 
-import kotlin.test.BeforeTest
-import kotlin.test.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
-
-@ExperimentalStrela
-class SuccessTests {
-    lateinit var success: Try<Boolean>
-
-    @BeforeTest
-    fun setUp() {
-        success = tryOf { true }
-    }
-
-    @Test
-    fun isSuccessReturnsTrue() {
-        // when
-        val actual = success.isSuccess
-
-        // then
-        assertTrue(actual)
-    }
-
-    @Test
-    fun isFailureReturnsFalse() {
-        // when
-        val actual = success.isFailure
-
-        // then
-        assertFalse(actual)
-    }
-}
+/**
+ * ExperimentalStrela
+ *
+ * @since 0.0.1
+ * @author Lars Tennstedt
+ */
+@Experimental
+@Retention(AnnotationRetention.BINARY)
+@Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
+annotation class ExperimentalStrela

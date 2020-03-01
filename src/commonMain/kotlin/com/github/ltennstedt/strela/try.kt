@@ -24,6 +24,7 @@ import com.github.ltennstedt.strela.Try.Success
  *
  * @since 0.0.1
  */
+@ExperimentalStrela
 fun <V> tryOf(f: () -> V): Try<V> {
     try {
         return Success(f.invoke())
@@ -38,6 +39,7 @@ fun <V> tryOf(f: () -> V): Try<V> {
  * @since 0.0.1
  * @author Lars Tennstedt
  */
+@ExperimentalStrela
 sealed class Try<out V> {
     /**
      * Success
@@ -45,6 +47,7 @@ sealed class Try<out V> {
      * @since 0.0.1
      * @author Lars Tennstedt
      */
+    @ExperimentalStrela
     data class Success<out V> internal constructor(val value: V) : Try<V>() {
         companion object
     }
@@ -55,6 +58,7 @@ sealed class Try<out V> {
      * @since 0.0.1
      * @author Lars Tennstedt
      */
+    @ExperimentalStrela
     data class Failure<out V>(val throwable: Throwable) : Try<V>() {
         companion object
     }

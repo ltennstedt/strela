@@ -25,6 +25,7 @@ package com.github.ltennstedt.strela
  * @since 0.0.1
  * @author Lars Tennstedt
  */
+@ExperimentalStrela
 sealed class Ior<L, R> {
     /**
      * Left

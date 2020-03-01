@@ -27,6 +27,7 @@ package com.github.ltennstedt.strela
  * @since 0.0.1
  * @author Lars Tennstedt
  */
+@ExperimentalStrela
 class Store<E : Enum<E>, T>(val init: T, val actions: List<Action<E, T>>) {
     init {
         require(actions.map { it.id }.distinct().size == actions.size) {
@@ -81,6 +82,7 @@ class Store<E : Enum<E>, T>(val init: T, val actions: List<Action<E, T>>) {
  * @since 0.0.1
  * @author Lars Tennstedt
  */
+@ExperimentalStrela
 data class Action<E : Enum<E>, T>(val id: E, val f: (T) -> T) {
     companion object
 }

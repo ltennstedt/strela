@@ -22,6 +22,7 @@ package com.github.ltennstedt.strela
  * @since 0.0.1
  * @author Lars Tennstedt
  */
+@ExperimentalStrela
 sealed class Either<L, R> {
     /**
      * Left

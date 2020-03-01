@@ -24,6 +24,7 @@ import com.github.ltennstedt.strela.Option.Some
  *
  * @since 0.0.1
  */
+@ExperimentalStrela
 fun <T> optionOf(value: T?): Option<T> = if (value === null) None() else Some(value)
 
 /**
@@ -32,6 +33,7 @@ fun <T> optionOf(value: T?): Option<T> = if (value === null) None() else Some(va
  * @since 0.0.1
  * @author Lars Tennstedt
  */
+@ExperimentalStrela
 sealed class Option<T> {
     /**
      * Some
